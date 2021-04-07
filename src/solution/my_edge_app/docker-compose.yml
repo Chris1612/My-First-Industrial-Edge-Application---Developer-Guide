@@ -37,7 +37,7 @@ services:
     image: influxdb:$INFLUXDB_VERSION   # Define image to pull from docker hub if not already on your machine available
     container_name: influxdb            # Name of the influx-db container
     restart: unless-stopped             # always restarts (see overview page 12 Industrial Edge Developer Guide) 
-    mem_limit: 700m
+    mem_limit: 1400m
     environment:                        # Environment variables available at container run-time
       INFLUXDB_DB: $INFLUXDB_DB         # Variable of INFLUXDB_DB will be set at runtime as well  
     logging:                            # allow logging
