@@ -32,6 +32,7 @@ services:
     mem_limit: 1400m
     environment:                        # Environment variables available at container run-time
       INFLUXDB_DB: edgedb         # Variable of INFLUXDB_DB will be set at runtime as well  ### Hardcoded of ENV
+      INFLUXDB_DATA_INDEX_VERSION: 'tsi1'
     logging:                            # allow logging
       options:                          # we use best pactice here as limiting file size and rolling mechanism
         max-size: "10m"                 # File size is 10MB
