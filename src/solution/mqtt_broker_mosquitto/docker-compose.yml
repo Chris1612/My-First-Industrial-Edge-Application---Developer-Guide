@@ -22,6 +22,6 @@ services:
 ###### NETWORK CONFIG ######
 networks:                           # Network interface configuration
   proxy-redirect:                   # Reference 'proxy-redirect' as predefined network
-    external: 
+    external:                       # Note: Please create the network manually as it is preexisting on Industrial Edge Device
       name: proxy-redirect
     driver: bridge
