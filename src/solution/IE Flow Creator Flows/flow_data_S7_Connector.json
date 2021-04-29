@@ -1,20 +1,20 @@
 [
     {
-        "id": "844b09ed.8e4a28",
+        "id": "36f57d21.a8d9a2",
         "type": "tab",
         "label": "Data Collection",
         "disabled": false,
         "info": "msgoutput={}\nmsgoutput.measurement = msg.topic.split('/').pop;\nmsgoutput.payload = {\n    serverTimestamp: msg.payload.ts.toISOString(),\n    value: Math.round(msg.payload.val * 1e2)/ 1e2,\n    name: msgoutput.measurement,\n}\n\nreturn msgoutput;"
     },
     {
-        "id": "636ba96f.54a21",
+        "id": "9c7c99c7.995708",
         "type": "tab",
         "label": "KPI-Calc-Dummy",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "d62e415b.14096",
+        "id": "e4c3246f.202c48",
         "type": "tab",
         "label": "KPI Estimation",
         "disabled": false,
@@ -23,9 +23,8 @@
     {
         "id": "1ab7e97a.bda1e7",
         "type": "mqtt-broker",
-        "z": "",
         "name": "Databus",
-        "broker": "ie_databus",
+        "broker": "ie-databus",
         "port": "1883",
         "clientid": "",
         "usetls": false,
@@ -43,33 +42,6 @@
         "willPayload": ""
     },
     {
-        "id": "d75cd8f0.f1bcf8",
-        "type": "OpcUa-Endpoint",
-        "z": "",
-        "endpoint": "opc.tcp://opc-server:4841",
-        "secpol": "Basic256",
-        "secmode": "SIGN",
-        "login": true
-    },
-    {
-        "id": "23dc6d97.ff346a",
-        "type": "OpcUa-Endpoint",
-        "z": "",
-        "endpoint": "opc.tcp://172.17.0.1:4841",
-        "secpol": "Basic256",
-        "secmode": "SIGNANDENCRYPT",
-        "login": true
-    },
-    {
-        "id": "30c0e1a4.185f76",
-        "type": "OpcUa-Endpoint",
-        "z": "",
-        "endpoint": "opc.tcp://ServiceName:Port",
-        "secpol": "None",
-        "secmode": "NONE",
-        "login": false
-    },
-    {
         "id": "3e6912e1.eda84e",
         "type": "influxdb",
         "hostname": "influxdb",
@@ -82,1514 +54,105 @@
         "influxdbVersion": "1.x"
     },
     {
-        "id": "24f42f18.468a",
-        "type": "influxdb",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "Acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "986cf005.d467e",
-        "type": "influxdb",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "275dc0b6.b07c1",
-        "type": "influxdb",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "8df05cec.36f8a8",
-        "type": "influxdb",
-        "hostname": "influx",
-        "port": "8086",
-        "protocol": "http",
-        "database": "Acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "f0764f8.29ec3b",
-        "type": "influxdb",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "Acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "79ce44a7.31ae44",
-        "type": "influxdb",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "f8738841.64ea18",
-        "type": "influxdb",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "1a718d46.199d13",
-        "type": "influxdb",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "Acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "8b9f8de3.4bc1d8",
-        "type": "influxdb",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "4879590b.555638",
-        "type": "influxdb",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "6c3b2345.1c302c",
-        "type": "influxdb",
-        "hostname": "influx",
-        "port": "8086",
-        "protocol": "http",
-        "database": "Acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "a80b7fca.20df5",
-        "type": "influxdb",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "Acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "18647a80.cb9b0e",
-        "type": "influxdb",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "5d873a60.0a8cc4",
-        "type": "influxdb",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "1f919a07.2c825e",
-        "type": "OpcUa-Endpoint",
-        "z": "",
-        "endpoint": "opc.tcp://10.7.50.125:4841",
-        "secpol": "None",
-        "secmode": "None",
-        "login": false
-    },
-    {
-        "id": "6aeb4991.b75ec8",
-        "type": "mqtt-broker",
-        "z": "",
-        "name": "",
-        "broker": "mqtt-broker",
-        "port": "1883",
-        "clientid": "nodered-client",
-        "usetls": false,
-        "compatmode": true,
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "closeTopic": "",
-        "closeQos": "0",
-        "closePayload": "",
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": ""
-    },
-    {
-        "id": "5895b800.b2536",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "influxdb",
-        "port": "8086",
-        "protocol": "http",
-        "database": "edgedb",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "3464a28c.0c29b6",
-        "type": "OpcUa-Endpoint",
-        "z": "",
-        "endpoint": "opc.tcp://opc-server:4841",
-        "secpol": "Basic256",
-        "secmode": "SIGN",
-        "login": true
-    },
-    {
-        "id": "dd5ee179.7516",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "Acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "eca55fa1.344fa",
-        "type": "mqtt-broker",
-        "z": "",
-        "name": "Mosqiuto",
-        "broker": "172.20.0.8",
-        "port": "1883",
-        "clientid": "",
-        "usetls": false,
-        "compatmode": true,
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "closeTopic": "",
-        "closeQos": "0",
-        "closePayload": "",
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": ""
-    },
-    {
-        "id": "ac064909.244c3",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "efed21db.ab743",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "e0433ab4.27f77",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "influx",
-        "port": "8086",
-        "protocol": "http",
-        "database": "Acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "3fb88e41.52b822",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "Acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "80d4b41c.ab9d9",
-        "type": "mqtt-broker",
-        "z": "",
-        "name": "Mosqiuto",
-        "broker": "172.20.0.8",
-        "port": "1883",
-        "clientid": "",
-        "usetls": false,
-        "compatmode": true,
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "closeTopic": "",
-        "closeQos": "0",
-        "closePayload": "",
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": ""
-    },
-    {
-        "id": "e4460c90.606e78",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "2bc03b99.0d1b1c",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "7c5ada49.70fec4",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "Acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "868fa5aa.393538",
-        "type": "mqtt-broker",
-        "z": "",
-        "name": "Mosqiuto",
-        "broker": "172.20.0.8",
-        "port": "1883",
-        "clientid": "",
-        "usetls": false,
-        "compatmode": true,
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "closeTopic": "",
-        "closeQos": "0",
-        "closePayload": "",
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": ""
-    },
-    {
-        "id": "e4f95ef8.ba4d7",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "2f7fc075.5157c8",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "2d20f85d.f72548",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "influx",
-        "port": "8086",
-        "protocol": "http",
-        "database": "Acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "23d6cf42.22254",
-        "type": "OpcUa-Endpoint",
-        "z": "",
-        "endpoint": "opc.tcp://172.17.0.1:4841",
-        "secpol": "Basic256",
-        "secmode": "SIGNANDENCRYPT",
-        "login": true
-    },
-    {
-        "id": "254dc963.90dba6",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "Acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "9ef7cbb5.bf1da8",
-        "type": "mqtt-broker",
-        "z": "",
-        "name": "Mosqiuto",
-        "broker": "172.20.0.8",
-        "port": "1883",
-        "clientid": "",
-        "usetls": false,
-        "compatmode": true,
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "closeTopic": "",
-        "closeQos": "0",
-        "closePayload": "",
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": ""
-    },
-    {
-        "id": "cab82b5b.fa3348",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "46dc0f6e.2f32b8",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "4a80314f.c0b7e8",
-        "type": "OpcUa-Endpoint",
-        "z": "",
-        "endpoint": "opc.tcp://ServiceName:Port",
-        "secpol": "None",
-        "secmode": "NONE",
-        "login": false
-    },
-    {
-        "id": "bbf72204.0b92f8",
-        "type": "mqtt-broker",
-        "z": "",
-        "name": "",
-        "broker": "mqtt-broker",
-        "port": "1883",
-        "clientid": "nodered-client",
-        "usetls": false,
-        "compatmode": true,
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "closeTopic": "",
-        "closeQos": "0",
-        "closePayload": "",
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": ""
-    },
-    {
-        "id": "e27088fb.d339",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "influxdb",
-        "port": "8086",
-        "protocol": "http",
-        "database": "edgedb",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "1fe07560.f5abd3",
-        "type": "OpcUa-Endpoint",
-        "z": "",
-        "endpoint": "opc.tcp://opc-server:4841",
-        "secpol": "Basic256",
-        "secmode": "SIGN",
-        "login": true
-    },
-    {
-        "id": "c34b2912.d36ba",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "Acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "76766932.7cf4e8",
-        "type": "mqtt-broker",
-        "z": "",
-        "name": "Mosqiuto",
-        "broker": "172.20.0.8",
-        "port": "1883",
-        "clientid": "",
-        "usetls": false,
-        "compatmode": true,
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "closeTopic": "",
-        "closeQos": "0",
-        "closePayload": "",
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": ""
-    },
-    {
-        "id": "2e25db5a.e37444",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "4f0e80a7.2b387",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "975b1891.c4dab",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "influx",
-        "port": "8086",
-        "protocol": "http",
-        "database": "Acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "e66cf076.24ad2",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "Acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "4472cda1.b6190c",
-        "type": "mqtt-broker",
-        "z": "",
-        "name": "Mosqiuto",
-        "broker": "172.20.0.8",
-        "port": "1883",
-        "clientid": "",
-        "usetls": false,
-        "compatmode": true,
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "closeTopic": "",
-        "closeQos": "0",
-        "closePayload": "",
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": ""
-    },
-    {
-        "id": "ab123e88.64ed38",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "9d8f3bca.aa81d8",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "b530629c.0e932",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "Acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "3d299eb1.840a9a",
-        "type": "mqtt-broker",
-        "z": "",
-        "name": "Mosqiuto",
-        "broker": "172.20.0.8",
-        "port": "1883",
-        "clientid": "",
-        "usetls": false,
-        "compatmode": true,
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "closeTopic": "",
-        "closeQos": "0",
-        "closePayload": "",
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": ""
-    },
-    {
-        "id": "b9d58de7.3652c8",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "959c3b25.8b23b",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "ec8ef1fe.7a31c",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "influx",
-        "port": "8086",
-        "protocol": "http",
-        "database": "Acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "67e99118.f82b78",
-        "type": "OpcUa-Endpoint",
-        "z": "",
-        "endpoint": "opc.tcp://172.17.0.1:4841",
-        "secpol": "Basic256",
-        "secmode": "SIGNANDENCRYPT",
-        "login": true
-    },
-    {
-        "id": "7c5a41bb.4c4fb",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "Acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "9fada53c.7eae4",
-        "type": "mqtt-broker",
-        "z": "",
-        "name": "Mosqiuto",
-        "broker": "172.20.0.8",
-        "port": "1883",
-        "clientid": "",
-        "usetls": false,
-        "compatmode": true,
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "closeTopic": "",
-        "closeQos": "0",
-        "closePayload": "",
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": ""
-    },
-    {
-        "id": "9ad7224.2dafee",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "cb6b9ef8.40985",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "cbd38553.5d7cc8",
-        "type": "OpcUa-Endpoint",
-        "z": "",
-        "endpoint": "opc.tcp://ServiceName:Port",
-        "secpol": "None",
-        "secmode": "NONE",
-        "login": false
-    },
-    {
-        "id": "db722934.0ae1c8",
-        "type": "mqtt-broker",
-        "z": "",
-        "name": "",
-        "broker": "mqtt-broker",
-        "port": "1883",
-        "clientid": "nodered-client",
-        "usetls": false,
-        "compatmode": true,
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "closeTopic": "",
-        "closeQos": "0",
-        "closePayload": "",
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": ""
-    },
-    {
-        "id": "43933807.0a3198",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "influxdb",
-        "port": "8086",
-        "protocol": "http",
-        "database": "edgedb",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "82b3841a.515a48",
-        "type": "OpcUa-Endpoint",
-        "z": "",
-        "endpoint": "opc.tcp://opc-server:4841",
-        "secpol": "Basic256",
-        "secmode": "SIGN",
-        "login": true
-    },
-    {
-        "id": "4151dc02.0d27c4",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "Acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "4b1492b7.4307e4",
-        "type": "mqtt-broker",
-        "z": "",
-        "name": "Mosqiuto",
-        "broker": "172.20.0.8",
-        "port": "1883",
-        "clientid": "",
-        "usetls": false,
-        "compatmode": true,
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "closeTopic": "",
-        "closeQos": "0",
-        "closePayload": "",
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": ""
-    },
-    {
-        "id": "945be8e.691df18",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "50f894d7.1ab324",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "60ffcea9.942d08",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "influx",
-        "port": "8086",
-        "protocol": "http",
-        "database": "Acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "a692f54f.735cc8",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "Acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "a871ced4.2bd918",
-        "type": "mqtt-broker",
-        "z": "",
-        "name": "Mosqiuto",
-        "broker": "172.20.0.8",
-        "port": "1883",
-        "clientid": "",
-        "usetls": false,
-        "compatmode": true,
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "closeTopic": "",
-        "closeQos": "0",
-        "closePayload": "",
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": ""
-    },
-    {
-        "id": "acf79971.f40d3",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "631acd3b.9544f4",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "fe940749.1486c",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "Acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "fb33ef91.09133",
-        "type": "mqtt-broker",
-        "z": "",
-        "name": "Mosqiuto",
-        "broker": "172.20.0.8",
-        "port": "1883",
-        "clientid": "",
-        "usetls": false,
-        "compatmode": true,
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "closeTopic": "",
-        "closeQos": "0",
-        "closePayload": "",
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": ""
-    },
-    {
-        "id": "4856257c.9aeaf4",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "974bea04.3bc66",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "10af0d7a.f11463",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "influx",
-        "port": "8086",
-        "protocol": "http",
-        "database": "Acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "7383af53.8c932",
-        "type": "OpcUa-Endpoint",
-        "z": "",
-        "endpoint": "opc.tcp://172.17.0.1:4841",
-        "secpol": "Basic256",
-        "secmode": "SIGNANDENCRYPT",
-        "login": true
-    },
-    {
-        "id": "1db86096.0c3207",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "Acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "3410bf9.561564",
-        "type": "mqtt-broker",
-        "z": "",
-        "name": "Mosqiuto",
-        "broker": "172.20.0.8",
-        "port": "1883",
-        "clientid": "",
-        "usetls": false,
-        "compatmode": true,
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "closeTopic": "",
-        "closeQos": "0",
-        "closePayload": "",
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": ""
-    },
-    {
-        "id": "90520bde.b4baf8",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "8e0e85d0.c484d",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "335c3595.98cbc2",
-        "type": "OpcUa-Endpoint",
-        "z": "",
-        "endpoint": "opc.tcp://ServiceName:Port",
-        "secpol": "None",
-        "secmode": "NONE",
-        "login": false
-    },
-    {
-        "id": "9419a955.d5d79",
-        "type": "mqtt-broker",
-        "z": "",
-        "name": "",
-        "broker": "mqtt-broker",
-        "port": "1883",
-        "clientid": "nodered-client",
-        "usetls": false,
-        "compatmode": true,
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "closeTopic": "",
-        "closeQos": "0",
-        "closePayload": "",
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": ""
-    },
-    {
-        "id": "c745a339.347a3",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "influxdb",
-        "port": "8086",
-        "protocol": "http",
-        "database": "edgedb",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "595bf629.b0528",
-        "type": "OpcUa-Endpoint",
-        "z": "",
-        "endpoint": "opc.tcp://opc-server:4841",
-        "secpol": "Basic256",
-        "secmode": "SIGN",
-        "login": true
-    },
-    {
-        "id": "b11d338e.c9bef8",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "Acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "620b6532.20d27c",
-        "type": "mqtt-broker",
-        "z": "",
-        "name": "Mosqiuto",
-        "broker": "172.20.0.8",
-        "port": "1883",
-        "clientid": "",
-        "usetls": false,
-        "compatmode": true,
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "closeTopic": "",
-        "closeQos": "0",
-        "closePayload": "",
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": ""
-    },
-    {
-        "id": "ee388a07.edae2",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "262b3e27.2bde3a",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "3af495cf.efae82",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "influx",
-        "port": "8086",
-        "protocol": "http",
-        "database": "Acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "2bea2ebf.0af84a",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "Acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "5741e480.21d9c4",
-        "type": "mqtt-broker",
-        "z": "",
-        "name": "Mosqiuto",
-        "broker": "172.20.0.8",
-        "port": "1883",
-        "clientid": "",
-        "usetls": false,
-        "compatmode": true,
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "closeTopic": "",
-        "closeQos": "0",
-        "closePayload": "",
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": ""
-    },
-    {
-        "id": "8a252006.95ae1",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "f47febad.c62a1",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "69e8b7c9.93ed58",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "Acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "c08b8a25.ecdce8",
-        "type": "mqtt-broker",
-        "z": "",
-        "name": "Mosqiuto",
-        "broker": "172.20.0.8",
-        "port": "1883",
-        "clientid": "",
-        "usetls": false,
-        "compatmode": true,
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "closeTopic": "",
-        "closeQos": "0",
-        "closePayload": "",
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": ""
-    },
-    {
-        "id": "f1af24cf.5a5de8",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "47eef984.5e0618",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "fbff367d.dcc778",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "influx",
-        "port": "8086",
-        "protocol": "http",
-        "database": "Acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "768f5850.b55428",
-        "type": "OpcUa-Endpoint",
-        "z": "",
-        "endpoint": "opc.tcp://172.17.0.1:4841",
-        "secpol": "Basic256",
-        "secmode": "SIGNANDENCRYPT",
-        "login": true
-    },
-    {
-        "id": "ba7f921e.7995b8",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "Acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "9b8354b2.aa08b",
-        "type": "mqtt-broker",
-        "z": "",
-        "name": "Mosqiuto",
-        "broker": "172.20.0.8",
-        "port": "1883",
-        "clientid": "",
-        "usetls": false,
-        "compatmode": true,
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "closeTopic": "",
-        "closeQos": "0",
-        "closePayload": "",
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": ""
-    },
-    {
-        "id": "1081d42e.6dec0c",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "fbdf358c.e63458",
-        "type": "influxdb",
-        "z": "",
-        "hostname": "172.17.0.3",
-        "port": "8086",
-        "protocol": "http",
-        "database": "acq",
-        "name": "",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "1.x"
-    },
-    {
-        "id": "e1599058.79ae1",
-        "type": "OpcUa-Endpoint",
-        "z": "",
-        "endpoint": "opc.tcp://ServiceName:Port",
-        "secpol": "None",
-        "secmode": "NONE",
-        "login": false
-    },
-    {
-        "id": "27f466e.564bf1a",
+        "id": "32085e1e.4b1322",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey"
+            }
+        },
+        "site": {
+            "name": "IE Flow Creator Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "10fe46ae.b68fd9",
         "type": "comment",
-        "z": "636ba96f.54a21",
+        "z": "9c7c99c7.995708",
         "name": "Calculate Total Power Consumption",
         "info": "",
         "x": 800,
@@ -1597,9 +160,9 @@
         "wires": []
     },
     {
-        "id": "772f5bbe.2927ec",
+        "id": "93389a3e.b17868",
         "type": "function",
-        "z": "636ba96f.54a21",
+        "z": "9c7c99c7.995708",
         "name": "Query-List",
         "func": "var a ='\"name\"'\nmsg.query=\"select * from powerdrive1 where \"+a+\"='powerdrive1'\"\nreturn msg; \n/*\nCLI-Funktionen f?r die Influxdb (Auszug)\n\"select * from data1\"\n//Zeigt alle Daten im measuurement an\nSELECT * FROM data where time > '2018-08-09T08:20:39.96Z' and time <= now()\n//Anzeige der measuremebts in einem bestimmten Zeitraum\nselect * from data where value > 80 and value < 85 \n//Filterung der Daten nach Value \n*/",
         "outputs": 1,
@@ -1610,14 +173,14 @@
         "y": 160,
         "wires": [
             [
-                "309958d4.80e488"
+                "a80ca002.b35a6"
             ]
         ]
     },
     {
-        "id": "4d09a15d.d9e2",
+        "id": "c3f28480.a44118",
         "type": "function",
-        "z": "636ba96f.54a21",
+        "z": "9c7c99c7.995708",
         "name": "Query-List",
         "func": "var a ='\"name\"'\nmsg.query=\"select * from powerdrive2 where \"+a+\"='powerdrive2'\"\nreturn msg; \n\n\n/*\nCLI-Funktionen f?r die Influxdb (Auszug)\n\"select * from data1\"\n//Zeigt alle Daten im measuurement an\nSELECT * FROM data where time > '2018-08-09T08:20:39.96Z' and time <= now()\n//Anzeige der measuremebts in einem bestimmten Zeitraum\nselect * from data where value > 80 and value < 85 \n//Filterung der Daten nach Value \n*/\n",
         "outputs": 1,
@@ -1626,14 +189,14 @@
         "y": 220,
         "wires": [
             [
-                "34668a99.2936e6"
+                "be705ddd.b666"
             ]
         ]
     },
     {
-        "id": "34668a99.2936e6",
+        "id": "be705ddd.b666",
         "type": "influxdb in",
-        "z": "636ba96f.54a21",
+        "z": "9c7c99c7.995708",
         "influxdb": "3e6912e1.eda84e",
         "name": "influxdb_query_power2",
         "query": "",
@@ -1644,14 +207,14 @@
         "y": 220,
         "wires": [
             [
-                "97a7f0be.62d7"
+                "76a37216.cc87cc"
             ]
         ]
     },
     {
-        "id": "97a7f0be.62d7",
+        "id": "76a37216.cc87cc",
         "type": "function",
-        "z": "636ba96f.54a21",
+        "z": "9c7c99c7.995708",
         "name": "collect_last_power_values",
         "func": "context.data = context.data || {};\n\nswitch (msg.payload[msg.payload.length-1].name) \n{\n    case \"powerdrive1\":\n        context.data.power1 = msg.payload[msg.payload.length-1].value;\n        msg = null;\n        break;\n    case \"powerdrive2\":\n        context.data.power2= msg.payload[msg.payload.length-1].value;\n        msg = null;\n        break;\n    default:\n        msg = null;\n    \tbreak;\n}\n\nif(context.data.power1 !== null && context.data.power2 !== null) \n{\n\tmsg2 = {};\n    msg2 = context.data;\n\n    context.data=null;\n\treturn msg2;\n} \nelse\n{\n    \n    return msg;    \n}\n",
         "outputs": 1,
@@ -1660,15 +223,15 @@
         "y": 220,
         "wires": [
             [
-                "d87b9891.7204e",
-                "bd6a8898.fd7aa"
+                "ef3ce0e.6ebb42",
+                "36e28791.7a5b68"
             ]
         ]
     },
     {
-        "id": "261a9dae.eb5232",
+        "id": "98f234a0.aa0bf8",
         "type": "function",
-        "z": "636ba96f.54a21",
+        "z": "9c7c99c7.995708",
         "name": "join_and_write_power_Influxdb",
         "func": "total = msg.payload;\n\n\n    Beta = [{\n        measurement: \"GEN_KPI_TotalPower\",\n        fields:{\n            name: \"TotalPower\",\n            value:total,\n            //weitereTags: -100 //(optional) nur 4 Datatypes sind in der Influxdb akzeptiert: Int,Float,String, Bool\n        },\n        timestamp: new Date()\n    }]\n//    Arr.push(Beta);\n//}\n\nmsg.payload = Beta;\nreturn msg;",
         "outputs": 1,
@@ -1677,15 +240,15 @@
         "y": 220,
         "wires": [
             [
-                "5f2f3560.aed71c",
-                "6d5aa8d5.c8d078"
+                "f049a804.258328",
+                "31d373bf.d2b08c"
             ]
         ]
     },
     {
-        "id": "6d5aa8d5.c8d078",
+        "id": "31d373bf.d2b08c",
         "type": "influxdb batch",
-        "z": "636ba96f.54a21",
+        "z": "9c7c99c7.995708",
         "influxdb": "3e6912e1.eda84e",
         "precision": "",
         "retentionPolicy": "",
@@ -1695,9 +258,9 @@
         "wires": []
     },
     {
-        "id": "309958d4.80e488",
+        "id": "a80ca002.b35a6",
         "type": "influxdb in",
-        "z": "636ba96f.54a21",
+        "z": "9c7c99c7.995708",
         "influxdb": "3e6912e1.eda84e",
         "name": "influxdb_query_power1",
         "query": "",
@@ -1708,43 +271,31 @@
         "y": 160,
         "wires": [
             [
-                "97a7f0be.62d7"
+                "76a37216.cc87cc"
             ]
         ]
     },
     {
-        "id": "bab7323e.76e2b",
-        "type": "comment",
-        "z": "844b09ed.8e4a28",
-        "name": "### Consume data from SIMATIC S7 Connector  and storage in influxdb ###",
-        "info": "",
-        "x": 390,
-        "y": 60,
-        "wires": []
-    },
-    {
-        "id": "709e0daf.499b2c",
+        "id": "fcb0f940.8676b8",
         "type": "link in",
-        "z": "636ba96f.54a21",
+        "z": "9c7c99c7.995708",
         "name": "",
         "links": [
-            "3e5dc939.97a5b6",
-            "ac2bfcf6.795f8",
-            "74d48a59.b773a4"
+            "36f30d2b.de5d52"
         ],
         "x": 135,
         "y": 220,
         "wires": [
             [
-                "772f5bbe.2927ec",
-                "4d09a15d.d9e2"
+                "93389a3e.b17868",
+                "c3f28480.a44118"
             ]
         ]
     },
     {
-        "id": "d87b9891.7204e",
+        "id": "ef3ce0e.6ebb42",
         "type": "function",
-        "z": "636ba96f.54a21",
+        "z": "9c7c99c7.995708",
         "name": "sum_total_power",
         "func": "var arr = [];\nvar mean=0;\nvar sum=0;\n\narr = Object.keys(msg).map(function(key) {\n    return msg[key]\n    })\narr.splice(-1,1)\n\nfor(var i=0; i < arr.length ; i++){\n      sum = sum + arr[i];\n}\n// mean = sum / arr.length; \n\nmsg2 = new Object();\n//msg2.payload = (arr[0] + arr[1] + arr[2]) / arr.length; \n\nmsg2.payload = sum;\nreturn msg2;",
         "outputs": 1,
@@ -1753,14 +304,14 @@
         "y": 220,
         "wires": [
             [
-                "261a9dae.eb5232"
+                "98f234a0.aa0bf8"
             ]
         ]
     },
     {
-        "id": "5f2f3560.aed71c",
+        "id": "f049a804.258328",
         "type": "debug",
-        "z": "636ba96f.54a21",
+        "z": "9c7c99c7.995708",
         "name": "KPI-Power",
         "active": false,
         "tosidebar": true,
@@ -1773,9 +324,9 @@
         "wires": []
     },
     {
-        "id": "bd6a8898.fd7aa",
+        "id": "36e28791.7a5b68",
         "type": "debug",
-        "z": "636ba96f.54a21",
+        "z": "9c7c99c7.995708",
         "name": "Last Power Values",
         "active": false,
         "tosidebar": true,
@@ -1788,27 +339,28 @@
         "wires": []
     },
     {
-        "id": "312b0c94.ec5ffc",
+        "id": "7201784.0f96788",
         "type": "influxdb in",
-        "z": "d62e415b.14096",
+        "z": "e4c3246f.202c48",
         "influxdb": "3e6912e1.eda84e",
         "name": "query",
         "query": "",
         "rawOutput": false,
         "precision": "",
         "retentionPolicy": "",
+        "org": "",
         "x": 850,
         "y": 160,
         "wires": [
             [
-                "44891320.efcc74"
+                "8c68dc9e.9ac75"
             ]
         ]
     },
     {
-        "id": "c4de64a3.60134",
+        "id": "8ead737f.5149a",
         "type": "debug",
-        "z": "d62e415b.14096",
+        "z": "e4c3246f.202c48",
         "name": "count",
         "active": false,
         "tosidebar": true,
@@ -1821,25 +373,26 @@
         "wires": []
     },
     {
-        "id": "ba9e8da2.80f8e8",
+        "id": "cd77a88a.279978",
         "type": "link in",
-        "z": "d62e415b.14096",
+        "z": "e4c3246f.202c48",
         "name": "input_raw_data",
         "links": [
-            "74d48a59.b773a4"
+            "106c19f1.e407c6",
+            "36f30d2b.de5d52"
         ],
-        "x": 55,
+        "x": 35,
         "y": 160,
         "wires": [
             [
-                "8ffb6577.2f768"
+                "37354fc9.2eed6"
             ]
         ]
     },
     {
-        "id": "2675661b.ba4b02",
+        "id": "70fa3666.d09e58",
         "type": "influxdb in",
-        "z": "d62e415b.14096",
+        "z": "e4c3246f.202c48",
         "influxdb": "3e6912e1.eda84e",
         "name": "query",
         "query": "",
@@ -1850,17 +403,17 @@
         "y": 160,
         "wires": [
             [
-                "c4de64a3.60134",
-                "28cf9c4.a6657e4"
+                "8ead737f.5149a",
+                "3247d483.d6e11c"
             ]
         ]
     },
     {
-        "id": "3b8caf45.65c3e",
+        "id": "3394f7e.65e5408",
         "type": "function",
-        "z": "d62e415b.14096",
+        "z": "e4c3246f.202c48",
         "name": "COUNT",
-        "func": "msgQueryCount = {}\nmsgQueryCount.measurement = msg.measurement\nmsgQueryCount.query = 'SELECT COUNT(\"value\") FROM ' + msg.measurement\n\nreturn msgQueryCount;",
+        "func": "msgQueryCount = {}\nmsgQueryCount.measurement = msg.measurement\nmsgQueryCount.query = 'SELECT COUNT(\"value\") FROM ' + msg.measurement\nreturn msgQueryCount;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1869,14 +422,14 @@
         "y": 160,
         "wires": [
             [
-                "2675661b.ba4b02"
+                "70fa3666.d09e58"
             ]
         ]
     },
     {
-        "id": "28cf9c4.a6657e4",
+        "id": "3247d483.d6e11c",
         "type": "function",
-        "z": "d62e415b.14096",
+        "z": "e4c3246f.202c48",
         "name": "GET_LAST_ENTRIES",
         "func": "msgQueryGet = {}\nmsgQueryGet.measurement = msg.measurement\nif (msg.payload[0].count >= 50) {\n    msgQueryGet.query = 'SELECT * FROM ' + msg.measurement + ' ORDER BY time DESC limit 50'\n\n    return msgQueryGet;\n}\n\nelse {return }\n\n\n",
         "outputs": 1,
@@ -1887,14 +440,14 @@
         "y": 160,
         "wires": [
             [
-                "312b0c94.ec5ffc"
+                "7201784.0f96788"
             ]
         ]
     },
     {
-        "id": "26d70546.6945a2",
+        "id": "f13cf180.93a8a",
         "type": "comment",
-        "z": "d62e415b.14096",
+        "z": "e4c3246f.202c48",
         "name": "### check if measurement has enough entries and get last 5 values if true",
         "info": "",
         "x": 320,
@@ -1902,9 +455,9 @@
         "wires": []
     },
     {
-        "id": "44891320.efcc74",
+        "id": "8c68dc9e.9ac75",
         "type": "json",
-        "z": "d62e415b.14096",
+        "z": "e4c3246f.202c48",
         "name": "",
         "property": "payload",
         "action": "obj",
@@ -1913,15 +466,15 @@
         "y": 160,
         "wires": [
             [
-                "6e99221e.07522c",
-                "4e2489a.3c82a78"
+                "e1d2c739.2bd688",
+                "8aabb7dd.15ef68"
             ]
         ]
     },
     {
-        "id": "6e99221e.07522c",
+        "id": "e1d2c739.2bd688",
         "type": "debug",
-        "z": "d62e415b.14096",
+        "z": "e4c3246f.202c48",
         "name": "response_get",
         "active": false,
         "tosidebar": true,
@@ -1934,9 +487,9 @@
         "wires": []
     },
     {
-        "id": "ba6fe9c8.e90ad",
+        "id": "af62a986.01a6d8",
         "type": "comment",
-        "z": "d62e415b.14096",
+        "z": "e4c3246f.202c48",
         "name": "PowerDrive1 and PowerDrive2 last 50 entries",
         "info": "",
         "x": 210,
@@ -1944,9 +497,9 @@
         "wires": []
     },
     {
-        "id": "3d21e5e2.95ce12",
+        "id": "edf4bf46.9bf85",
         "type": "influxdb in",
-        "z": "d62e415b.14096",
+        "z": "e4c3246f.202c48",
         "influxdb": "3e6912e1.eda84e",
         "name": "query",
         "query": "",
@@ -1957,14 +510,14 @@
         "y": 400,
         "wires": [
             [
-                "3750c556.d9f2d2"
+                "3f455e78.d58632"
             ]
         ]
     },
     {
-        "id": "87a4b564.77f2a",
+        "id": "238bbec3.178722",
         "type": "debug",
-        "z": "d62e415b.14096",
+        "z": "e4c3246f.202c48",
         "name": "mqtt output",
         "active": false,
         "tosidebar": true,
@@ -1977,9 +530,9 @@
         "wires": []
     },
     {
-        "id": "3a9132f3.0dd94e",
+        "id": "fb92426b.deb77",
         "type": "influxdb in",
-        "z": "d62e415b.14096",
+        "z": "e4c3246f.202c48",
         "influxdb": "3e6912e1.eda84e",
         "name": "query",
         "query": "SELECT COUNT(\"value\") FROM voltagedrive3",
@@ -1991,14 +544,14 @@
         "y": 400,
         "wires": [
             [
-                "83a8bc4f.67fb78"
+                "1e5c138d.6caa0c"
             ]
         ]
     },
     {
-        "id": "83a8bc4f.67fb78",
+        "id": "1e5c138d.6caa0c",
         "type": "function",
-        "z": "d62e415b.14096",
+        "z": "e4c3246f.202c48",
         "name": "GET_LAST_ENTRIES",
         "func": "// gets the value of n, if not yet set takes default value 50\nvar n = context.get('sample_n')|| 50;\n\n\n    \n    msgQueryGet = {}\n    //msgQueryGet.measurement = msg.measurement\n    msgQueryGet.measurement = 'voltagedrive3'\n    if (msg.payload[0].count >= n) {\n        msgQueryGet.SampleNumber = n\n        msgQueryGet.query = 'SELECT \"value\" FROM voltagedrive3 ORDER BY time DESC limit ' + n\n        //msgQueryGet.query = 'SELECT \"value\" FROM ' + msg.measurement + ' limit ' + n\n        return msgQueryGet;\n    }",
         "outputs": 1,
@@ -2009,14 +562,14 @@
         "y": 400,
         "wires": [
             [
-                "3d21e5e2.95ce12"
+                "edf4bf46.9bf85"
             ]
         ]
     },
     {
-        "id": "c17551a2.88fda8",
+        "id": "43ab874d.879d08",
         "type": "mqtt out",
-        "z": "d62e415b.14096",
+        "z": "e4c3246f.202c48",
         "name": "Mean",
         "topic": "Mean",
         "qos": "",
@@ -2027,9 +580,9 @@
         "wires": []
     },
     {
-        "id": "163ba0ad.36ffdf",
+        "id": "fc5aa743.5de028",
         "type": "comment",
-        "z": "d62e415b.14096",
+        "z": "e4c3246f.202c48",
         "name": "VoltageDrive3 dynamic sample of entries",
         "info": "",
         "x": 490,
@@ -2037,9 +590,9 @@
         "wires": []
     },
     {
-        "id": "24f8f96a.60c74e",
+        "id": "b947a00d.b477e",
         "type": "influxdb in",
-        "z": "d62e415b.14096",
+        "z": "e4c3246f.202c48",
         "influxdb": "3e6912e1.eda84e",
         "name": "query",
         "query": "",
@@ -2050,14 +603,14 @@
         "y": 600,
         "wires": [
             [
-                "3750c556.d9f2d2"
+                "3f455e78.d58632"
             ]
         ]
     },
     {
-        "id": "45115505.303894",
+        "id": "3a9ee8ff.ccfb38",
         "type": "influxdb in",
-        "z": "d62e415b.14096",
+        "z": "e4c3246f.202c48",
         "influxdb": "3e6912e1.eda84e",
         "name": "query",
         "query": "SELECT COUNT(\"value\") FROM currentdrive3",
@@ -2068,14 +621,14 @@
         "y": 600,
         "wires": [
             [
-                "75feb818.ba5448"
+                "e77c42c9.631b7"
             ]
         ]
     },
     {
-        "id": "75feb818.ba5448",
+        "id": "e77c42c9.631b7",
         "type": "function",
-        "z": "d62e415b.14096",
+        "z": "e4c3246f.202c48",
         "name": "GET_LAST_ENTRIES",
         "func": "\n\n// gets the value of n, if not yet set takes default value 50\nvar n = context.get('sample_n')|| 50;\n\n\n    \n    msgQueryGet = {}\n    //msgQueryGet.measurement = msg.measurement\n    msgQueryGet.measurement = 'currentdrive3'\n    if (msg.payload[0].count >= n) {\n        msgQueryGet.SampleNumber = n\n        msgQueryGet.query = 'SELECT \"value\" FROM currentdrive3 ORDER BY time DESC limit ' + n\n        //msgQueryGet.query = 'SELECT \"value\" FROM ' + msg.measurement + ' limit ' + n\n        return msgQueryGet;\n    }\n",
         "outputs": 1,
@@ -2086,14 +639,14 @@
         "y": 600,
         "wires": [
             [
-                "24f8f96a.60c74e"
+                "b947a00d.b477e"
             ]
         ]
     },
     {
-        "id": "af29b896.045bd",
+        "id": "347a75d3.fce7da",
         "type": "comment",
-        "z": "d62e415b.14096",
+        "z": "e4c3246f.202c48",
         "name": "CurrentDrive3  dynamic sample of entries",
         "info": "",
         "x": 490,
@@ -2101,9 +654,402 @@
         "wires": []
     },
     {
-        "id": "8ffb6577.2f768",
+        "id": "3f455e78.d58632",
+        "type": "function",
+        "z": "e4c3246f.202c48",
+        "name": "manual_join",
+        "func": "var tempo_cd3_batch = context.get('cd3_batch')||[];\nvar tempo_vd3_batch = context.get('vd3_batch')||[];\n\nfunction build_analytics_object(){\n    data_obj = {\n        sample_number : msg.SampleNumber,\n        current_drive3_batch : tempo_cd3_batch,\n        voltage_drive3_batch : tempo_vd3_batch,\n    }\n    return data_obj\n}\n\n\nif (msg.measurement == 'currentdrive3'){\n    tempo_cd3_batch = msg.payload\n    context.set('cd3_batch',tempo_cd3_batch)\n    \n}\nelse if (msg.measurement == 'voltagedrive3') {\n    tempo_vd3_batch = msg.payload\n    context.set('vd3_batch',tempo_vd3_batch)\n}\n\nif (tempo_cd3_batch.length > 0 && tempo_vd3_batch.length >0 ) {\n    py_obj={}\n    py_obj.payload = build_analytics_object()\n    tempo_cd3_batch = []\n    tempo_vd3_batch = []\n    context.set('cd3_batch', tempo_cd3_batch)\n    context.set('vd3_batch', tempo_vd3_batch)\n    \n    return py_obj\n    \n}\n\nelse{\n    return\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1100,
+        "y": 500,
+        "wires": [
+            [
+                "238bbec3.178722",
+                "43ab874d.879d08"
+            ]
+        ]
+    },
+    {
+        "id": "9395eb38.386778",
+        "type": "mqtt in",
+        "z": "e4c3246f.202c48",
+        "name": "",
+        "topic": "StandardKpiResult",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "1ab7e97a.bda1e7",
+        "x": 130,
+        "y": 820,
+        "wires": [
+            [
+                "6dfaf36b.e1685c",
+                "9b289cc9.28f27"
+            ]
+        ]
+    },
+    {
+        "id": "4bc8c5ce.e484cc",
+        "type": "debug",
+        "z": "e4c3246f.202c48",
+        "name": "response standard kpis",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 1230,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "6dfaf36b.e1685c",
+        "type": "json",
+        "z": "e4c3246f.202c48",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 510,
+        "y": 820,
+        "wires": [
+            [
+                "90a9456d.a61848"
+            ]
+        ]
+    },
+    {
+        "id": "90a9456d.a61848",
+        "type": "function",
+        "z": "e4c3246f.202c48",
+        "name": "store data",
+        "func": "my_payload = {};\nmy_payload = msg.payload;\noutput_standardkpis = {}\noutput_standardkpis.measurement = my_payload.name.toUpperCase() + '_STANDARD_KPIS'\noutput_standardkpis.payload = {\n    mean: Math.round(my_payload.mean_result * 1e2)/ 1e2,\n    median: Math.round(my_payload.median_result * 1e2)/ 1e2,\n    stddev: Math.round(my_payload.stddev_result * 1e2)/ 1e2,\n    name: my_payload.name,\n}\n\nreturn output_standardkpis;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 870,
+        "y": 820,
+        "wires": [
+            [
+                "2acc93b0.13e9ac",
+                "4bc8c5ce.e484cc"
+            ]
+        ]
+    },
+    {
+        "id": "2acc93b0.13e9ac",
+        "type": "influxdb out",
+        "z": "e4c3246f.202c48",
+        "influxdb": "3e6912e1.eda84e",
+        "name": "write_influxdb",
+        "measurement": "",
+        "precision": "",
+        "retentionPolicy": "",
+        "x": 1200,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "c52a9cfe.d9036",
+        "type": "mqtt in",
+        "z": "e4c3246f.202c48",
+        "name": "",
+        "topic": "MeanResult",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "1ab7e97a.bda1e7",
+        "x": 110,
+        "y": 960,
+        "wires": [
+            [
+                "740e2b17.a16a34",
+                "ffd354c2.901dc8"
+            ]
+        ]
+    },
+    {
+        "id": "31e83da.eed80c2",
+        "type": "debug",
+        "z": "e4c3246f.202c48",
+        "name": "response mean",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 1210,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "740e2b17.a16a34",
+        "type": "json",
+        "z": "e4c3246f.202c48",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 510,
+        "y": 960,
+        "wires": [
+            [
+                "5f86391.c8242c8"
+            ]
+        ]
+    },
+    {
+        "id": "5f86391.c8242c8",
+        "type": "function",
+        "z": "e4c3246f.202c48",
+        "name": "store data",
+        "func": "my_payload = {};\nmy_payload = msg.payload;\noutput_pd1_mean = {}\noutput_pd1_mean.measurement = my_payload.name.toUpperCase()\noutput_pd1_mean.payload = {\n    value: Math.round(my_payload.power_mean_result * 1e2)/ 1e2,\n    name: my_payload.name,\n}\n\nreturn output_pd1_mean;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 870,
+        "y": 960,
+        "wires": [
+            [
+                "faf69116.06cc4",
+                "31e83da.eed80c2"
+            ]
+        ]
+    },
+    {
+        "id": "faf69116.06cc4",
+        "type": "influxdb out",
+        "z": "e4c3246f.202c48",
+        "influxdb": "3e6912e1.eda84e",
+        "name": "write_influxdb",
+        "measurement": "",
+        "precision": "",
+        "retentionPolicy": "",
+        "x": 1200,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "5bc7ff6.60291",
+        "type": "comment",
+        "z": "e4c3246f.202c48",
+        "name": "Data Analytics Results",
+        "info": "",
+        "x": 540,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "9b289cc9.28f27",
+        "type": "debug",
+        "z": "e4c3246f.202c48",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 360,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "ffd354c2.901dc8",
+        "type": "debug",
+        "z": "e4c3246f.202c48",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 380,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "8aabb7dd.15ef68",
+        "type": "mqtt out",
+        "z": "e4c3246f.202c48",
+        "name": "StandardKpis",
+        "topic": "StandardKpis",
+        "qos": "",
+        "retain": "",
+        "broker": "1ab7e97a.bda1e7",
+        "x": 1220,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "36f30d2b.de5d52",
+        "type": "link out",
+        "z": "36f57d21.a8d9a2",
+        "name": "data_gen",
+        "links": [
+            "cd77a88a.279978",
+            "fcb0f940.8676b8"
+        ],
+        "x": 1335,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "5e7d24e4.1ae09c",
+        "type": "mqtt in",
+        "z": "36f57d21.a8d9a2",
+        "name": "FA_Drives-Data source",
+        "topic": "ie/d/j/simatic/v1/s7c1/dp/r/FA_Drives/default",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "1ab7e97a.bda1e7",
+        "x": 220,
+        "y": 280,
+        "wires": [
+            [
+                "4616e87.5990c18"
+            ]
+        ]
+    },
+    {
+        "id": "4616e87.5990c18",
+        "type": "function",
+        "z": "36f57d21.a8d9a2",
+        "name": "Convert S7 Connecor JSON to InfluxDB JSON",
+        "func": "var id2NameMap = global.get(\"id2NameMap\")\nvar id2DataTypeMap = global.get(\"id2DataTypeMap\")\n\nmsgoutput={}\n\nlet bulk = JSON.parse(msg.payload);\n//node.warn(bulk)\nmsgoutput.payload = new Array(bulk.vals.size);\n\nfor (var i = 0; i < bulk.vals.length; i++) {\n    record = bulk.vals[i]\n\n    msgoutput.payload[i] = {\n        measurement: id2NameMap.get(record.id),\n        fields: {\n            value: Math.round(record.val * 1e2)/ 1e2,\n            name: id2NameMap.get(record.id),\n            qualitycode: false\n        },\n        timestamp: new Date(record.ts)\n    }\n    \n}\n\nreturn msgoutput;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 560,
+        "y": 280,
+        "wires": [
+            [
+                "c654ee6a.5b8b8",
+                "c89159b.fae1ba8",
+                "ee8f2522.f45718"
+            ]
+        ]
+    },
+    {
+        "id": "bb5cc7c2.c5e488",
+        "type": "comment",
+        "z": "36f57d21.a8d9a2",
+        "name": "### Map variable id to variable name so that it is human readable ###",
+        "info": "",
+        "x": 370,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "fd2b4a84.304d98",
+        "type": "mqtt in",
+        "z": "36f57d21.a8d9a2",
+        "name": "",
+        "topic": "ie/m/j/simatic/v1/s7c1/dp",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "1ab7e97a.bda1e7",
+        "x": 270,
+        "y": 100,
+        "wires": [
+            [
+                "e53d0b46.b00cf8",
+                "f41a49d8.23ee08"
+            ]
+        ]
+    },
+    {
+        "id": "e53d0b46.b00cf8",
+        "type": "function",
+        "z": "36f57d21.a8d9a2",
+        "name": "Configuration Mapping",
+        "func": "var id2NameMap = global.get(\"id2NameMap\")\nvar id2DataTypeMap = global.get(\"id2DataTypeMap\")\n\nif(id2NameMap == undefined || id2DataTypeMap == undefined ){\n    id2NameMap = new Map(); \n    id2DataTypeMap = new Map(); \n}\n\nlet connectionName = \"FA_Drives\"; // Name of the connection\n\n\nlet m = JSON.parse(msg.payload);\n\n\n// Mapping ID -> Variable Name\n// Mapping ID -> Variable Data Type\nm.connections.forEach(connection => \n{\n    if(connection.name == connectionName) {\n        let datapointobjects = connection.dataPoints;\n        \n        datapointobjects.forEach( datapoint => {\n            datapoint.dataPointDefinitions.forEach( definition => {\n                id2NameMap.set(definition.id, definition.name) // Mapping ID -> Variable Name\n                id2DataTypeMap.set(definition.id, definition.dataType) // Mapping ID -> Variable Data Type \n            })\n           \n        })\n    }\n    \n})\n\nglobal.set(\"id2NameMap\", id2NameMap)\nglobal.set(\"id2DataTypeMap\", id2DataTypeMap)\n\nmsg.payload = id2NameMap\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 540,
+        "y": 140,
+        "wires": [
+            [
+                "f41a49d8.23ee08"
+            ]
+        ]
+    },
+    {
+        "id": "f41a49d8.23ee08",
+        "type": "debug",
+        "z": "36f57d21.a8d9a2",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 790,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "75e2e2d.eb6a01c",
+        "type": "comment",
+        "z": "36f57d21.a8d9a2",
+        "name": "### Retrieve data from S7 connector and replace variable ID with variable Name and puslish as Array ###",
+        "info": "",
+        "x": 480,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "c654ee6a.5b8b8",
+        "type": "debug",
+        "z": "36f57d21.a8d9a2",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 990,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "c89159b.fae1ba8",
+        "type": "influxdb batch",
+        "z": "36f57d21.a8d9a2",
+        "influxdb": "3e6912e1.eda84e",
+        "precision": "",
+        "retentionPolicy": "",
+        "name": "write_data_to_influxdb",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 1020,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "37354fc9.2eed6",
         "type": "switch",
-        "z": "d62e415b.14096",
+        "z": "e4c3246f.202c48",
         "name": "filter",
         "property": "measurement",
         "propertyType": "msg",
@@ -2136,389 +1082,54 @@
         "y": 160,
         "wires": [
             [
-                "3b8caf45.65c3e"
+                "3394f7e.65e5408"
             ],
             [
-                "3b8caf45.65c3e"
+                "3394f7e.65e5408"
             ],
             [
-                "3a9132f3.0dd94e"
+                "fb92426b.deb77"
             ],
             [
-                "45115505.303894"
+                "3a9ee8ff.ccfb38"
             ]
         ]
     },
     {
-        "id": "3750c556.d9f2d2",
+        "id": "ee8f2522.f45718",
+        "type": "split",
+        "z": "36f57d21.a8d9a2",
+        "name": "Split S7 Array",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": "1",
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 1000,
+        "y": 400,
+        "wires": [
+            [
+                "bc1f14ce.454208"
+            ]
+        ]
+    },
+    {
+        "id": "bc1f14ce.454208",
         "type": "function",
-        "z": "d62e415b.14096",
-        "name": "manual_join",
-        "func": "var tempo_cd3_batch = context.get('cd3_batch')||[];\nvar tempo_vd3_batch = context.get('vd3_batch')||[];\n\nfunction build_analytics_object(){\n    data_obj = {\n        sample_number : msg.SampleNumber,\n        current_drive3_batch : tempo_cd3_batch,\n        voltage_drive3_batch : tempo_vd3_batch,\n    }\n    return data_obj\n}\n\n\nif (msg.measurement == 'currentdrive3'){\n    tempo_cd3_batch = msg.payload\n    context.set('cd3_batch',tempo_cd3_batch)\n    \n}\nelse if (msg.measurement == 'voltagedrive3') {\n    tempo_vd3_batch = msg.payload\n    context.set('vd3_batch',tempo_vd3_batch)\n}\n\nif (tempo_cd3_batch.length > 0 && tempo_vd3_batch.length >0 ) {\n    py_obj={}\n    py_obj.payload = build_analytics_object()\n    tempo_cd3_batch = []\n    tempo_vd3_batch = []\n    context.set('cd3_batch', tempo_cd3_batch)\n    context.set('vd3_batch', tempo_vd3_batch)\n    \n    return py_obj\n    \n}\n\nelse{\n    return\n}",
+        "z": "36f57d21.a8d9a2",
+        "name": "Split formatting",
+        "func": "var msgoutput = msg.payload\nreturn msgoutput;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 1100,
-        "y": 500,
-        "wires": [
-            [
-                "87a4b564.77f2a",
-                "c17551a2.88fda8"
-            ]
-        ]
-    },
-    {
-        "id": "620df342.d35bf4",
-        "type": "mqtt in",
-        "z": "d62e415b.14096",
-        "name": "",
-        "topic": "StandardKpiResult",
-        "qos": "2",
-        "datatype": "auto",
-        "broker": "1ab7e97a.bda1e7",
-        "x": 130,
-        "y": 820,
-        "wires": [
-            [
-                "bffe0621.3ea488",
-                "ed23db1.d4a4aa8"
-            ]
-        ]
-    },
-    {
-        "id": "bf8dc2ad.6ae898",
-        "type": "debug",
-        "z": "d62e415b.14096",
-        "name": "response standard kpis",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "x": 1230,
-        "y": 780,
-        "wires": []
-    },
-    {
-        "id": "bffe0621.3ea488",
-        "type": "json",
-        "z": "d62e415b.14096",
-        "name": "",
-        "property": "payload",
-        "action": "",
-        "pretty": false,
-        "x": 510,
-        "y": 820,
-        "wires": [
-            [
-                "2daf73e6.3581f4"
-            ]
-        ]
-    },
-    {
-        "id": "2daf73e6.3581f4",
-        "type": "function",
-        "z": "d62e415b.14096",
-        "name": "store data",
-        "func": "my_payload = {};\nmy_payload = msg.payload;\noutput_standardkpis = {}\noutput_standardkpis.measurement = my_payload.name.toUpperCase() + '_STANDARD_KPIS'\noutput_standardkpis.payload = {\n    mean: Math.round(my_payload.mean_result * 1e2)/ 1e2,\n    median: Math.round(my_payload.median_result * 1e2)/ 1e2,\n    stddev: Math.round(my_payload.stddev_result * 1e2)/ 1e2,\n    name: my_payload.name,\n}\n\nreturn output_standardkpis;",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 870,
-        "y": 820,
-        "wires": [
-            [
-                "7cdf2632.75b998",
-                "bf8dc2ad.6ae898"
-            ]
-        ]
-    },
-    {
-        "id": "7cdf2632.75b998",
-        "type": "influxdb out",
-        "z": "d62e415b.14096",
-        "influxdb": "3e6912e1.eda84e",
-        "name": "write_influxdb",
-        "measurement": "",
-        "precision": "",
-        "retentionPolicy": "",
         "x": 1200,
-        "y": 820,
-        "wires": []
-    },
-    {
-        "id": "55430907.faf0b8",
-        "type": "mqtt in",
-        "z": "d62e415b.14096",
-        "name": "",
-        "topic": "MeanResult",
-        "qos": "2",
-        "datatype": "auto",
-        "broker": "1ab7e97a.bda1e7",
-        "x": 110,
-        "y": 960,
+        "y": 400,
         "wires": [
             [
-                "36722c89.b4ef44",
-                "810cd23f.99e758"
+                "36f30d2b.de5d52"
             ]
         ]
-    },
-    {
-        "id": "10478aba.bffadd",
-        "type": "debug",
-        "z": "d62e415b.14096",
-        "name": "response mean",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "x": 1210,
-        "y": 920,
-        "wires": []
-    },
-    {
-        "id": "36722c89.b4ef44",
-        "type": "json",
-        "z": "d62e415b.14096",
-        "name": "",
-        "property": "payload",
-        "action": "",
-        "pretty": false,
-        "x": 510,
-        "y": 960,
-        "wires": [
-            [
-                "863b357c.fa6248"
-            ]
-        ]
-    },
-    {
-        "id": "863b357c.fa6248",
-        "type": "function",
-        "z": "d62e415b.14096",
-        "name": "store data",
-        "func": "my_payload = {};\nmy_payload = msg.payload;\noutput_pd1_mean = {}\noutput_pd1_mean.measurement = my_payload.name.toUpperCase()\noutput_pd1_mean.payload = {\n    value: Math.round(my_payload.power_mean_result * 1e2)/ 1e2,\n    name: my_payload.name,\n}\n\nreturn output_pd1_mean;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "x": 870,
-        "y": 960,
-        "wires": [
-            [
-                "185e896d.7f4347",
-                "10478aba.bffadd"
-            ]
-        ]
-    },
-    {
-        "id": "185e896d.7f4347",
-        "type": "influxdb out",
-        "z": "d62e415b.14096",
-        "influxdb": "3e6912e1.eda84e",
-        "name": "write_influxdb",
-        "measurement": "",
-        "precision": "",
-        "retentionPolicy": "",
-        "x": 1200,
-        "y": 960,
-        "wires": []
-    },
-    {
-        "id": "cf807cda.94826",
-        "type": "comment",
-        "z": "d62e415b.14096",
-        "name": "Data Analytics Results",
-        "info": "",
-        "x": 540,
-        "y": 740,
-        "wires": []
-    },
-    {
-        "id": "ed23db1.d4a4aa8",
-        "type": "debug",
-        "z": "d62e415b.14096",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 360,
-        "y": 780,
-        "wires": []
-    },
-    {
-        "id": "810cd23f.99e758",
-        "type": "debug",
-        "z": "d62e415b.14096",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 380,
-        "y": 920,
-        "wires": []
-    },
-    {
-        "id": "4e2489a.3c82a78",
-        "type": "mqtt out",
-        "z": "d62e415b.14096",
-        "name": "StandardKpis",
-        "topic": "StandardKpis",
-        "qos": "",
-        "retain": "",
-        "broker": "1ab7e97a.bda1e7",
-        "x": 1220,
-        "y": 160,
-        "wires": []
-    },
-    {
-        "id": "190dfd6.519b083",
-        "type": "mqtt in",
-        "z": "844b09ed.8e4a28",
-        "name": "powerdrive1",
-        "topic": "ie/d/j/simatic/v1/s7c1/dp/r/FA_Drives/powerdrive1",
-        "qos": "2",
-        "datatype": "auto",
-        "broker": "1ab7e97a.bda1e7",
-        "x": 190,
-        "y": 140,
-        "wires": [
-            [
-                "d3d9fe40.e6df58"
-            ]
-        ]
-    },
-    {
-        "id": "dc952f8a.0c49f8",
-        "type": "mqtt in",
-        "z": "844b09ed.8e4a28",
-        "name": "powerdrive2",
-        "topic": "ie/d/j/simatic/v1/s7c1/dp/r/FA_Drives/powerdrive2",
-        "qos": "2",
-        "datatype": "auto",
-        "broker": "1ab7e97a.bda1e7",
-        "x": 190,
-        "y": 200,
-        "wires": [
-            [
-                "d3d9fe40.e6df58"
-            ]
-        ]
-    },
-    {
-        "id": "e6321241.9b1ca",
-        "type": "mqtt in",
-        "z": "844b09ed.8e4a28",
-        "name": "voltagedrive3",
-        "topic": "ie/d/j/simatic/v1/s7c1/dp/r/FA_Drives/voltagedrive3",
-        "qos": "2",
-        "datatype": "auto",
-        "broker": "1ab7e97a.bda1e7",
-        "x": 190,
-        "y": 260,
-        "wires": [
-            [
-                "d3d9fe40.e6df58"
-            ]
-        ]
-    },
-    {
-        "id": "701a405.65cfa4",
-        "type": "mqtt in",
-        "z": "844b09ed.8e4a28",
-        "name": "currentdrive3",
-        "topic": "ie/d/j/simatic/v1/s7c1/dp/r/FA_Drives/currentdrive3",
-        "qos": "2",
-        "datatype": "auto",
-        "broker": "1ab7e97a.bda1e7",
-        "x": 190,
-        "y": 320,
-        "wires": [
-            [
-                "d3d9fe40.e6df58"
-            ]
-        ]
-    },
-    {
-        "id": "2848582e.20d42",
-        "type": "debug",
-        "z": "844b09ed.8e4a28",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1230,
-        "y": 220,
-        "wires": []
-    },
-    {
-        "id": "d3d9fe40.e6df58",
-        "type": "function",
-        "z": "844b09ed.8e4a28",
-        "name": "Convert S7 Connecor JSON to InfluxDB JSON",
-        "func": "msgoutput={}\nmsgoutput.measurement = msg.topic.split('/').pop();\nmsg.payload = JSON.parse(msg.payload);\nmsgoutput.payload = {\n    timestamp: msg.payload.ts,\n    value: Math.round(msg.payload.val * 1e2)/ 1e2,\n    name: msgoutput.measurement,\n    qualitycode: false\n}\n\nreturn msgoutput;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "x": 630,
-        "y": 260,
-        "wires": [
-            [
-                "912307ff.be792",
-                "74d48a59.b773a4",
-                "2848582e.20d42"
-            ]
-        ]
-    },
-    {
-        "id": "74d48a59.b773a4",
-        "type": "link out",
-        "z": "844b09ed.8e4a28",
-        "name": "data_gen",
-        "links": [
-            "ba9e8da2.80f8e8",
-            "709e0daf.499b2c"
-        ],
-        "x": 1195,
-        "y": 320,
-        "wires": []
-    },
-    {
-        "id": "912307ff.be792",
-        "type": "influxdb out",
-        "z": "844b09ed.8e4a28",
-        "influxdb": "c745a339.347a3",
-        "name": "write_data_influxdb",
-        "measurement": "",
-        "precision": "",
-        "retentionPolicy": "",
-        "database": "database",
-        "precisionV18FluxV20": "ms",
-        "retentionPolicyV18Flux": "",
-        "org": "organisation",
-        "bucket": "bucket",
-        "x": 1270,
-        "y": 260,
-        "wires": []
     }
 ]

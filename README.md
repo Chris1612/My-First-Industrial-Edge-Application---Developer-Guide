@@ -28,7 +28,7 @@ The app contains three parts – the connectivity to collect the data from the O
 
 ## Documentation
 
-- Here is a link to the [SIOS](https://support.industry.siemens.com/cs/sc?lc=de-WW) where the App Developer Guide of this application example can be found.
+- Here is a link to the [SIOS](https://support.industry.siemens.com/cs/ww/en/view/109795865) where the App Developer Guide of this application example can be found.
 - You can find further documentation and help in the following links
   - [Industrial Edge Hub](https://iehub.eu1.edge.siemens.cloud/#/documentation)
   - [Industrial Edge Forum](https://www.siemens.com/industrial-edge-forum)
